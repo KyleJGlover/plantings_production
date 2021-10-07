@@ -19,11 +19,9 @@ router.post(
   validateRequest,
   async (req: Request, res: Response) => {
     const { email, password, rePassword } = req.body;
-    console.log("password");
     if (password !== rePassword) {
       throw new BadRequestError("Both passwords must match.");
     }
-    console.log("password");
 
     // Checks to see if the email is in use already
     const existingUser = await User.findOne({ email });

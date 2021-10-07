@@ -17,6 +17,7 @@ it("returns a 400 on invalid signin when incorrect password is supplied ", async
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
 
@@ -35,6 +36,7 @@ it("responds with a cookie when given valid credentials", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
 

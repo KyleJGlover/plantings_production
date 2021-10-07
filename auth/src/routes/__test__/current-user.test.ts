@@ -7,6 +7,7 @@ it("Responds with details about the current user", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
   const cookie = authResponse.get("Set-Cookie");
@@ -25,5 +26,5 @@ it("Responds with null if not authenticated", async () => {
     .get("/api/users/currentuser")
     .send({})
     .expect(200);
-  expect(response.body.currentUser.email).toEqual(null);
+  expect(response.body.currentUser).toEqual(null);
 });

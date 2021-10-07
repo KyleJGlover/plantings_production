@@ -7,6 +7,7 @@ it("returns a 201 on successful signup", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
 });
@@ -53,6 +54,7 @@ it("disallows duplicate emails", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
 
@@ -61,6 +63,7 @@ it("disallows duplicate emails", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(400);
 });
@@ -71,6 +74,7 @@ it("sets a cookie after successful signup", async () => {
     .send({
       email: "test@test.com",
       password: "password",
+      rePassword: "password",
     })
     .expect(201);
 
