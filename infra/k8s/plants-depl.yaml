@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plants-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plants
+  template:
+    metadata:
+      labels:
+        app: plants
+    spec:
+      containers:
+        - name: plants
+          image: kjglover/plants:latest
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: "http://nats-srv:4222"
+            - name: NATS_CLUSTER_ID
+              value: planting
+            - name: MONGO_URI
+              value: "mongodb://plants-mongo-srv:27017/plants"
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plants-srv
+spec:
+  selector:
+    app: plants
+  ports:
+    - name: plants
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

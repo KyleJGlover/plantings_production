@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plants-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plants-mongo
+  template:
+    metadata:
+      labels:
+        app: plants-mongo
+    spec:
+      containers:
+        - name: plants-mongo
+          image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plants-mongo-srv
+spec:
+  selector:
+    app: plants-mongo
+  type: ClusterIP
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

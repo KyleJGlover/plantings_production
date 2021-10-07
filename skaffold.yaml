@@ -1,0 +1,60 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - infra/k8s/*
+metadata:
+  name: plantings
+build:
+  local:
+    push: false
+  artifacts:
+    - image: kjglover/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: kjglover/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "*/*.js"
+            dest: .
+    - image: kjglover/plants
+      context: plants
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: kjglover/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: kjglover/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: kjglover/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .

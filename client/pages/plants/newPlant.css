@@ -1,0 +1,10 @@
+.img-responsive {
+  height: 200px;
+  width: 200px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  margin-top: 15px;
+}
