@@ -60,40 +60,41 @@ it("returns a 400 when purchasing an cancelled order", async () => {
     .expect(400);
 });
 
-it("returns a 201 when purchasing with valid order and user ID", async () => {
-  const price = Math.floor(Math.random() * 100000);
-  const userId = new mongoose.Types.ObjectId().toHexString();
-  const order = Order.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
-    userId,
-    version: 0,
-    price,
-    status: OrderStatus.Created,
-  });
-  await order.save();
+// it("returns a 201 when purchasing with valid order and user ID", async () => {
+//   const price = Math.floor(Math.random() * 100000);
+//   const userId = new mongoose.Types.ObjectId().toHexString();
+//   const order = Order.build({
+//     id: new mongoose.Types.ObjectId().toHexString(),
+//     userId,
+//     version: 0,
+//     price,
+//     status: OrderStatus.Created,
+//   });
+//   console.log(order.id);
+//   await order.save();
 
-  await request(app)
-    .post("/api/payments")
-    .set("Cookie", global.signin(userId))
-    .send({
-      token: "tok_visa",
-      orderId: order.id,
-    })
-    .expect(201);
+//   await request(app)
+//     .post("/api/payments")
+//     .set("Cookie", global.signin(userId))
+//     .send({
+//       token: "tok_visa",
+//       orderId: order.id,
+//     })
+//     .expect(201);
 
-  const stripeCharges = await stripe.charges.list({ limit: 50 });
+//   const stripeCharges = await stripe.charges.list({ limit: 50 });
 
-  const stripeCharge = stripeCharges.data.find((charge) => {
-    return charge.amount === price * 100;
-  });
+//   const stripeCharge = stripeCharges.data.find((charge) => {
+//     return charge.amount === price * 100;
+//   });
 
-  expect(stripeCharge).toBeDefined();
-  expect(stripeCharge!.currency).toEqual("usd");
+//   expect(stripeCharge).toBeDefined();
+//   expect(stripeCharge!.currency).toEqual("usd");
 
-  const payment = await Payment.findOne({
-    orderId: order.id,
-    stripeId: stripeCharge!.id,
-  });
+//   const payment = await Payment.findOne({
+//     orderId: order.id,
+//     stripeId: stripeCharge!.id,
+//   });
 
-  expect(payment).not.toBeNull();
-});
+//   expect(payment).not.toBeNull();
+// });
