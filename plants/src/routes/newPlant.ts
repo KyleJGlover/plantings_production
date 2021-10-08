@@ -18,6 +18,7 @@ router.post(
 
     const title = req.body.title;
     const description = req.body.description;
+    const category = req.body.category;
     const price = Number(req.body.price).valueOf();
     const imageFilename = req.file!.filename;
 
@@ -26,6 +27,9 @@ router.post(
     }
     if (!description) {
       throw new BadRequestError("Description is required.");
+    }
+    if (!category) {
+      throw new BadRequestError("Category is required.");
     }
     if (!price) {
       throw new BadRequestError(
@@ -40,6 +44,7 @@ router.post(
       owner: req.currentUser!.email,
       title: title,
       description,
+      category,
       price,
       userId: req.currentUser!.id,
       imageFilename,
@@ -56,7 +61,6 @@ router.post(
       userId: plant.userId,
       imageFilename: plant.imageFilename,
     });
-    console.log("hello");
     res.status(201).send(plant);
   }
 );

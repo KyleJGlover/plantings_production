@@ -123,3 +123,7 @@
   border-width: 2px 2px 2px 2px;
   border-style: solid;
 }
+
+#btnradio {
+  width: 100px;
+}

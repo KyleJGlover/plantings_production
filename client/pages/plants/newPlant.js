@@ -7,6 +7,7 @@ import Router from "next/router";
 const newPlant = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("indoor");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   const [previewImage, setpreviewImage] = useState(null);
@@ -45,9 +46,10 @@ const newPlant = () => {
 
     data.append("title", title);
     data.append("description", description);
+    data.append("category", category);
     data.append("price", price);
     data.append("image", image);
-
+    console.log(category);
     plantDoRequest();
   };
 
@@ -70,6 +72,36 @@ const newPlant = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+        </div>
+        <div className="form-group">
+          <label>Category</label>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              value="indoor"
+              onChange={(e) => setCategory(e.target.value)}
+              defaultChecked
+            />
+            <label className="form-check-label" forhtml="flexRadioDefault1">
+              Indoor
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              value="outdoor"
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            <label className="form-check-label" forhtml="flexRadioDefault2">
+              Outdoor
+            </label>
+          </div>
         </div>
         <div className="form-group">
           <label>Price</label>
