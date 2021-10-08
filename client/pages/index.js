@@ -94,7 +94,7 @@ const LandingPage = ({ plants, currentUser }) => {
           <p className="lead text-muted">
             This will display all the current postings available on the site. If
             you see the red delete button that is because you are the owner of
-            that order!
+            that specific order!
           </p>
           <p>
             <a href="/plants/newPlant" className="btn btn-primary my-2">
