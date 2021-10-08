@@ -24,9 +24,17 @@ app.use(
 app.use(
   cookieSession({
     signed: false,
-    secure: process.env.NODE_ENV !== "test",
+    secure: false,
   })
 );
+
+// Development version
+// app.use(
+//   cookieSession({
+//     signed: false,
+//     secure: process.env.NODE_ENV !== "test",
+//   })
+// );
 
 app.use(currentUser);
 
