@@ -30,13 +30,13 @@ router.post(
     const { token, orderId } = req.body;
 
     const order = await Order.findById(orderId);
-
     if (!order) {
       throw new NotFoundError();
     }
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
+    console.log(order.status);
     if (order.status === OrderStatus.Cancelled) {
       throw new BadRequestError("Cannot pay for an cancelled order.");
     }
