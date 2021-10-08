@@ -11,7 +11,7 @@ const setup = async () => {
 
   // Create and save a ticket
   const ticket = Plant.build({
-    id: mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });

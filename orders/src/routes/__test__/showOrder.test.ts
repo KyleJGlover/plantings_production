@@ -6,7 +6,7 @@ import { Plant } from "../../models/plant";
 it("fetches the order", async () => {
   // Create the Plant
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
@@ -31,7 +31,7 @@ it("fetches the order", async () => {
 it("Invalid user attempts to access orders of another user, should return an error", async () => {
   // Create the Plant
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });

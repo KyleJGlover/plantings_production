@@ -14,9 +14,9 @@ beforeAll(async () => {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   mongo = await MongoMemoryServer.create();
-  const uri = mongo.getUri();
+  const mongoUri = await mongo.getUri();
 
-  await mongoose.connect(uri);
+  await mongoose.connect(mongoUri);
 });
 
 beforeEach(async () => {

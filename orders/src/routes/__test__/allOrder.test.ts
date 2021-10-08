@@ -4,11 +4,11 @@ import { Order } from "../../models/order";
 import { Plant } from "../../models/plant";
 import mongoose from "mongoose";
 
-const buildTicket = async () => {
+const buildPlant = async () => {
   const plant = Plant.build({
-    id: mongoose.Types.ObjectId().toHexString(),
-    title: "concert",
-    price: 20,
+    id: new mongoose.Types.ObjectId().toHexString(),
+    title: "rose",
+    price: 10,
   });
   await plant.save();
 
@@ -17,9 +17,9 @@ const buildTicket = async () => {
 
 it("fetches orders for an particular user", async () => {
   // Create three tickets
-  const plantOne = await buildTicket();
-  const plantTwo = await buildTicket();
-  const plantThree = await buildTicket();
+  const plantOne = await buildPlant();
+  const plantTwo = await buildPlant();
+  const plantThree = await buildPlant();
 
   const userOne = global.signin();
   const userTwo = global.signin();
@@ -29,13 +29,14 @@ it("fetches orders for an particular user", async () => {
     .set("Cookie", userOne)
     .send({ plantId: plantOne.id })
     .expect(201);
-  console.log(plantOne);
+
   // Create two orders as User #2
   const { body: orderOne } = await request(app)
     .post("/api/orders")
     .set("Cookie", userTwo)
     .send({ plantId: plantTwo.id })
     .expect(201);
+
   const { body: orderTwo } = await request(app)
     .post("/api/orders")
     .set("Cookie", userTwo)
