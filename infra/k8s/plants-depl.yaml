@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: plants
-          image: kjglover/plants:latest
+          image: kjglover/plants
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
