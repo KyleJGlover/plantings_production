@@ -7,7 +7,9 @@ it("Implements optimisric concurrency control", async () => {
     description: "Beautiful",
     price: 10,
     userId: "asdf",
-    imageFilename: "ndsicndwcnw",
+    category: "indoor",
+    owner: "user",
+    imageFilename: "Rose.jpeg",
   });
 
   // Save the plant to the database
@@ -25,5 +27,11 @@ it("Implements optimisric concurrency control", async () => {
   await firstInstance!.save();
 
   // Save the second fetched plant
-  await secondInstance!.save();
+  try {
+    await secondInstance!.save();
+  } catch (err) {
+    return;
+  }
+
+  throw new Error("Should not reach this point");
 });
