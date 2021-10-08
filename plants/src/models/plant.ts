@@ -8,6 +8,7 @@ interface PlantsAttrs {
   owner: string;
   title: string;
   description: string;
+  category: string;
   price: number;
   userId: string;
   imageFilename: string;
@@ -19,6 +20,7 @@ interface PlantsDoc extends mongoose.Document {
   owner: string;
   title: string;
   description: string;
+  category: string;
   price: number;
   userId: string;
   imageFilename: string;
@@ -44,6 +46,10 @@ const plantsSchema = new mongoose.Schema(
       required: true,
     },
     description: {
+      type: String,
+      required: true,
+    },
+    category: {
       type: String,
       required: true,
     },

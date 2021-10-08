@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Link from "next/link";
 import { precise } from "./helper/functions.js";
 import deleteUseRequest from "../hooks/delete-plants-use-request";
 import Router from "next/router";
 
 const LandingPage = ({ plants, currentUser }) => {
+  const [filter, setFilter] = useState("");
+
   const { deleteDoRequest, errors } = deleteUseRequest({
     method: "delete",
     body: {},
@@ -13,6 +16,7 @@ const LandingPage = ({ plants, currentUser }) => {
   if (!currentUser) {
     currentUser = { id: "" };
   }
+
   const checkOwner = (plant) => {
     if (plants.length > 0) {
       if (currentUser.id === plant.plant.userId) {
@@ -29,9 +33,9 @@ const LandingPage = ({ plants, currentUser }) => {
     }
   };
 
-  const plantList = plants.map((plant) => {
+  const buildProductCard = (plant) => {
     return (
-      <div className="col-lg-3 col-md-4 col-sm-12" key={plant.plant.id}>
+      <div className="col-lg-4 col-md-6 col-sm-12" key={plant.plant.id}>
         <div className="box-border">
           <img className="thumbnail rounded" src={plant.URL} />
           <div className="box-element product">
@@ -69,6 +73,16 @@ const LandingPage = ({ plants, currentUser }) => {
         </div>
       </div>
     );
+  };
+
+  const plantList = plants.map((plant) => {
+    if (filter === "" || filter === "all") {
+      return buildProductCard(plant);
+    }
+    console.log(filter);
+    if (filter === plant.plant.category) {
+      return buildProductCard(plant);
+    }
   });
 
   // Might get rid of the description on this window since it's the cover
@@ -90,6 +104,56 @@ const LandingPage = ({ plants, currentUser }) => {
         </div>
       </section>
       <div className="album py-5 bg-light">
+        <div
+          className="d-flex justify-content-center bd-highlight mb-2"
+          id="category-selector"
+        >
+          <div
+            className="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="btnradio1"
+              autoComplete="off"
+              defaultChecked
+              value="all"
+              onChange={(e) => setFilter(e.target.value)}
+            />
+            <label className="btn btn-outline-primary" htmlFor="btnradio1">
+              All
+            </label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="btnradio2"
+              autoComplete="off"
+              value="indoor"
+              onChange={(e) => setFilter(e.target.value)}
+            />
+            <label className="btn btn-outline-primary" htmlFor="btnradio2">
+              Indoor
+            </label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autoComplete="off"
+              value="outdoor"
+              onChange={(e) => setFilter(e.target.value)}
+            />
+            <label className="btn btn-outline-primary" htmlFor="btnradio3">
+              Outdoor
+            </label>
+          </div>
+        </div>
         {errors}
         <div className="container">
           {plants.length > 0 ? (
