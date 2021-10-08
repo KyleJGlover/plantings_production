@@ -17,7 +17,7 @@ it("returns an error if the plant does not exist", async () => {
 
 it("returns an error if the plant is already reserved", async () => {
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
@@ -39,7 +39,7 @@ it("returns an error if the plant is already reserved", async () => {
 
 it("reserves a plant", async () => {
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "sunflower",
     price: 20,
   });
@@ -54,7 +54,7 @@ it("reserves a plant", async () => {
 
 it("emits an created event ", async () => {
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "sunflower",
     price: 20,
   });

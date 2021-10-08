@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 it("Marks an order as cancelled (deleted)", async () => {
   // Create the Plant
   const plant = Plant.build({
-    id: mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
@@ -37,7 +37,7 @@ it("Marks an order as cancelled (deleted)", async () => {
 it("It needs to emit a delete event", async () => {
   // Create the Plant
   const plant = Plant.build({
-    id: "hello",
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "concert",
     price: 20,
   });
