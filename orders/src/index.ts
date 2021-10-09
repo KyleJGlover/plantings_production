@@ -9,7 +9,7 @@ import { PaymentCreatedListener } from "./events/listener/payment-created-listen
 import { PlantDeletedListener } from "./events/listener/plant-deleted-listener";
 
 const start = async () => {
-  console.log("Starting...");
+  console.log("Starting....");
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
   }
