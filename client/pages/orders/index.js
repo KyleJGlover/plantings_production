@@ -157,7 +157,7 @@ const OrderIndex = ({ orders }) => {
                 <tbody>{cancelledStatus}</tbody>
               </table>
             ) : (
-              <div>No Cancelled Orders </div>
+              <div className="text-center">No Cancelled Orders </div>
             )}
           </div>
         </div>
