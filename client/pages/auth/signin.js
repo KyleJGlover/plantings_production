@@ -32,7 +32,7 @@ const signin = () => {
             <br />
             username: test@test.com
             <br />
-            password: password
+            password: 1234
           </p>
         </div>
       </section>
