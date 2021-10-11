@@ -19,17 +19,17 @@ Couple of preperations for a developer:
 - Read through the infra/k8s since there are two files special Nginx-ingress files, one for the dev (develoment) and one for prod (production). 
 - In the bottom of your ingress-srv.yaml there are URL hostnames that can be customized to change the URL.
 ## Tech Stack
-Front-End 
+1. Front-End 
 - [React.js](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Bootstrap](https://getbootstrap.com)
-Back-End
+2. Back-End
 - [Kubernetes](https://kubernetes.io/)
 - [Docker](https://www.docker.com/)
 - [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
 - [Nats-Streaming](https://docs.nats.io/nats-streaming-concepts/intro)
 - [MongoDB](https://www.mongodb.com/)
-Hosting 
+3. Hosting 
 - [Digital-Ocean](https://www.digitalocean.com/)
 
   
