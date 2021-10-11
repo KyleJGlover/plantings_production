@@ -28,6 +28,7 @@ Back-End
 - [Docker](https://www.docker.com/)
 - [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
 - [Nats-Streaming](https://docs.nats.io/nats-streaming-concepts/intro)
+- [MongoDB](https://www.mongodb.com/)
 Hosting 
 - [Digital-Ocean](https://www.digitalocean.com/)
 
