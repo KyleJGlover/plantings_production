@@ -8,7 +8,11 @@ import { Plant } from "../models/plant";
 
 const router = express.Router();
 
-const baseImageURL = "https://plantings.dev/api/plants/image/";
+// This is the development base URL:
+// const baseImageURL = "https://plantings.dev/api/plants/image/";
+
+//This is the production base URL:
+const baseImageURL = "https://www.plantings.page/api/plants/image/";
 
 router.get("/api/plants", async (req: Request, res: Response) => {
   const plants = await Plant.find({
