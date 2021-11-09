@@ -6,10 +6,10 @@ A simple e-commerce site that was developed using a microservice architecture. O
 
 ## Overview
 - The frontend used React and Next.js to present content ot the user.
-- Each service is created using the Node and Express.
+- Each service is created using Node and Express.
 - Data for each service is stored in a instance of MongoDB or Redis.
 - The entire application is deployed and run in Docker Containers that are executed in a Kubernetes cluster.
-- All Services are written in Typescript except for the Webpages served to the client with Next.js
+- All Services are written in Typescript except for the Webpages served to the client with Next.js that are written in Javascript.
 
 ## Main Objectives
 - Implement a multi-service architectural design.
