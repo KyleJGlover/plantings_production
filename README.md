@@ -18,7 +18,7 @@ A simple e-commerce site that was developed using a microservice architecture. O
 - Develop reusuable code in for other large project.
 
 ## Some of what I learned
-- Patternsfor creating scalable microservices for a variety of app domains.
+- Patterns for creating scalable microservices for a variety of app domains.
 - Build Server-Side-Rendered React application using Hooks and Next.js.
 - Custom implementation of event bus.
 - Create a consistent strutured responses from the different API's.
