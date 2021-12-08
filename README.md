@@ -44,16 +44,18 @@ Couple of preperations for a developer:
 1. Front-End 
 - [React.js](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [Express](https://expressjs.com/en/starter/installing.html)
 - [Bootstrap](https://getbootstrap.com)
 2. Back-End
+- [Express](https://expressjs.com/en/starter/installing.html)
 - [Kubernetes](https://kubernetes.io/)
 - [Docker](https://www.docker.com/)
 - [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
 - [Nats-Streaming](https://docs.nats.io/nats-streaming-concepts/intro)
 - [MongoDB](https://www.mongodb.com/)
-3. Hosting 
+4. Hosting 
 - [Digital-Ocean](https://www.digitalocean.com/)
+5. Development
+- [Skaffold](https://skaffold.dev/)
 
   
 ## Screenshot
