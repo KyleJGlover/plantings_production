@@ -2,10 +2,10 @@
 # Plantings
 
 A simple e-commerce site that was developed using a microservice architecture. On the site a user you can sign up, sign in, and post any kind of plant for sale. The website supports a payment service run by the Stripe API. This website is running on a kubernetes cluster with pods built using Docker containers and is hosted by digital ocean. This repository is connected to my account on digital ocean and will initiate an action whenever there is push/merge to the Master repository using github actions. 
-- Website URL: https://www.plantings.page/ (Must type thisisunsafe after clicking on the page since https protocals haven't been created yet).
+- Website URL: https://www.plantings.page/ (Must type thisisunsafe after clicking on the page since https protocals haven't been created yet) (This website is no longer up since it cost money to run)
 
 ## Overview
-- The frontend used React and Next.js to present content ot the user.
+- The frontend used React and Next.js to present content to the user.
 - Each service is created using Node and Express.
 - Data for each service is stored in a instance of MongoDB or Redis.
 - The entire application is deployed and run in Docker Containers that are executed in a Kubernetes cluster.
