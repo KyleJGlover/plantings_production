@@ -85,7 +85,7 @@ const LandingPage = ({ plants, currentUser }) => {
     }
   });
 
-  // Might get rid of the description on this window since it's the cover
+  // Might get rid of the description on this window since it's the cover change
   return (
     <div>
       <section className="jumbotron text-center">
