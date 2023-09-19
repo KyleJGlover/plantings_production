@@ -10,7 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "700"
 spec:
   rules:
-    - host: www.plantings.page
+    - host: www.plantings.pag
       http:
         paths:
           - path: /api/payments/?(.*)
