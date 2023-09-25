@@ -50,7 +50,7 @@ Couple of preperations for a developer:
 - [Kubernetes](https://kubernetes.io/)
 - [Docker](https://www.docker.com/)
 - [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
-- [Nats-Streaming](https://docs.nats.io/nats-streaming-concepts/intro)
+- [Nats-Streaming]([https://docs.nats.io/nats-streaming-concepts/intro](https://docs.nats.io/))
 - [MongoDB](https://www.mongodb.com/)
 4. Hosting 
 - [Digital-Ocean](https://www.digitalocean.com/)
