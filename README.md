@@ -1,8 +1,8 @@
 
 # Plantings
 
-A simple e-commerce site that was developed using a microservice architecture. On the site a user you can sign up, sign in, and post any kind of plant for sale. The website supports a payment service run by the Stripe API. This website is running on a kubernetes cluster with pods built using Docker containers and is hosted by digital ocean. This repository is connected to my account on digital ocean and will initiate an action whenever there is push/merge to the Master repository using github actions. 
-- Website URL: https://www.plantings.page/ (Must type thisisunsafe after clicking on the page since https protocals haven't been created yet) (This website is no longer up since it cost money to run)
+A simple e-commerce site that was developed using a microservice architecture. On the site a user you can sign up, sign in, and post any kind of plant for sale. The website supports a payment service run by the Stripe API. This website is running on a Kubernetes cluster with pods built using Docker containers and is hosted by digital ocean. To assist and development of the Kubernetes Cluster I used Skaffold framework to maintain the workflow for building, pushing, and deploying my application. The frontend was created using React.js and Bootstrap frameworks. The webpages support server-side rendering with Next.js to serve pages to users. To account for downed services I implemented a publisher/subscriber service with Nats-Streaming to retain data for concurrency between services. This repository is connected to my account on digital ocean and will initiate an action whenever there is push/merge to the Master repository using GitHub actions.
+- (Deprecated) Website URL: https://www.plantings.page/ (Must type thisisunsafe after clicking on the page since https protocals haven't been created yet) (This website is no longer up since it cost money to run)
 
 ## Overview
 - The frontend used React and Next.js to present content to the user.
