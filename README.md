@@ -51,6 +51,7 @@ Couple of preperations for a developer:
 - [Docker](https://www.docker.com/)
 - [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
 - [Nats-Streaming](https://nats.io/about/)
+- [Jest](https://jestjs.io/)
 - [MongoDB](https://www.mongodb.com/)
 4. Hosting 
 - [Digital-Ocean](https://www.digitalocean.com/)
