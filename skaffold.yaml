@@ -37,7 +37,7 @@ build:
             dest: .
     - image: kjglover/orders
       context: orders
-      docker:
+      docker: 
         dockerfile: Dockerfile
       sync:
         manual:
