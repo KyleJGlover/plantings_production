@@ -61,6 +61,6 @@ Couple of preperations for a developer:
   
 ## Screenshot
 
-![App Screenshot](https://raw.githubusercontent.com/KyleJGlover/plantings_production/dev2/Plantings-Main.png)
+![App Screenshot]([https://raw.githubusercontent.com/KyleJGlover/plantings_production/dev2/Plantings-Main.png](https://github.com/KyleJGlover/plantings_production/blob/Master/Plantings-Main.png)https://github.com/KyleJGlover/plantings_production/blob/Master/Plantings-Main.png)
 
   
